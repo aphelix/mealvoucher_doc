@@ -6,7 +6,9 @@ General Configuration Files
 ----------------------------
 The library contains 2 configuration files. These are eftpos.cfg and devices.xml
 
+
 eftpos.cfg 
+
 This file is the configuration file that contains the general library definitions
 
 LOG_FILE_PATH specifies which directory the logs will be placed in. Transaction flow can be controlled via logs.
@@ -17,4 +19,10 @@ Moreover, log rotation and other log properties are defined in this file. Within
 
 
 devices.xml
+
+In this file, the configuration values of the pos devices are defined. Library calls should be made with the related pos id value. Also different connection types can be defined.In the Current Connection tag, the actively used connection can be determined. MealVoucherTransactionAction and Simple Transaction Action should be GUI. Other can be the same values from existing devices.xml file
+
+MV Generic Info
+- Other information needed in post-call meal voucher payment or values to be needed from the user are received or displayed via the gui.
+- In Setcard contactless transactions, the card must be kept on the POS device for a long time. Otherwise, the card cannot be read.
 
