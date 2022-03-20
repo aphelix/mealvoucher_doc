@@ -82,6 +82,11 @@ The payment process is done through simple-payment type and using GUI. The call 
   eftPosDevice->Free(slipList);		
 ```
 
+- **Receipt examples**
+
+Metropol:
+![alt text](https://github.com/aphelix/mealvoucher_doc/blob/master/mv1.png?raw=true)
+
 
 
 MV_Void
