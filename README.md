@@ -98,10 +98,10 @@ Edenred:<br/>
 Sodexo:<br/>
 Sodexo transaction process is only possible by extra input via pos screen.
 
-Choose "Kartlı İslem". It means "Payment with credit card"
+Choose "Kartlı İslem". It means "Payment with credit card" <br/>
 ![alt text](https://github.com/aphelix/mealvoucher_doc/blob/master/sodexo_flow1.jpg?raw=true) <br/>
 ![alt text](https://github.com/aphelix/mealvoucher_doc/blob/master/sodexo_flow2.jpg?raw=true) <br/>
-Choose "Satıs". It means "Sales"
+Choose "Satıs". It means "Sales" <br/>
 ![alt text](https://github.com/aphelix/mealvoucher_doc/blob/master/sodexo_flow3.jpg?raw=true) <br/>
 ![alt text](https://github.com/aphelix/mealvoucher_doc/blob/master/sodexo_flow4.jpg?raw=true) <br/>
 ![alt text](https://github.com/aphelix/mealvoucher_doc/blob/master/sodexo_flow5.jpg?raw=true) <br/>
