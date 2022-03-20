@@ -34,7 +34,7 @@ In this file, the configuration values of the pos devices are defined. Library c
 MV_SimpleAuthorize
 ------------------
 
-**int32_t D10FlowController::MV_SimpleAuthorize(uint64_t amount, AuthResponse**  authResponse, SLIP_LIST** slipList)**
+>int32_t D10FlowController::MV_SimpleAuthorize(uint64_t amount, AuthResponse**  authResponse, SLIP_LIST** slipList)
 
 SUCCESS (0) is returned on success, related error code is returned on failure
 
