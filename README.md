@@ -123,6 +123,23 @@ The reference number can vary on the slip of each meal voucher type. You can fin
 
 Since the additional information will be entered with the GUI, first parameter can be used with default 0 and "" empty string values.
 
+SUCCESS (0) is returned on success, corresponding error code is returned on failure
+
+**Return values:** <br/>
+LIBRARY_CANNOT_BE_CREATED  <br/>
+READ_DEVICE_CFG_ERROR  <br/>
+MEALVOUCHER_GUI_ERROR <br/>
+TRANSACTION_INTERRUPTED_BY_USER <br/>
+ACTION_HANDLER_TIMEOUT  <br/>
+ACTION_HANDLER_ERROR <br/>
+MESSAGE_CREATE_ERROR <br/>
+CONNECTION_FAILED <br/>
+RECV_ERROR <br/>
+TRANSACTION_INTERRUPTED_BY_POS <br/>
+MESSAGE_INTEGRITY_ERROR <br/>
+RECV_TIMEOUT <br/>
+SEND_TIMEOUT <br/>
+SEND_ERROR <br/> <br/>
 
 **Usage example:**
 
@@ -150,24 +167,6 @@ eftPosDevice->Free(slipList);
 slipList = nullptr;
 authResponse = nullptr;
 ```
-
-SUCCESS (0) is returned on success, corresponding error code is returned on failure
-
-**Return values:** <br/>
-LIBRARY_CANNOT_BE_CREATED  <br/>
-READ_DEVICE_CFG_ERROR  <br/>
-MEALVOUCHER_GUI_ERROR <br/>
-TRANSACTION_INTERRUPTED_BY_USER <br/>
-ACTION_HANDLER_TIMEOUT  <br/>
-ACTION_HANDLER_ERROR <br/>
-MESSAGE_CREATE_ERROR <br/>
-CONNECTION_FAILED <br/>
-RECV_ERROR <br/>
-TRANSACTION_INTERRUPTED_BY_POS <br/>
-MESSAGE_INTEGRITY_ERROR <br/>
-RECV_TIMEOUT <br/>
-SEND_TIMEOUT <br/>
-SEND_ERROR <br/> <br/>
 
 
 
