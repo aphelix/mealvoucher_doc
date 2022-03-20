@@ -85,11 +85,27 @@ The payment process is done through simple-payment type and using GUI. The call 
 - **Receipt examples**
 
 Metropol:<br/>
-![alt text](https://github.com/aphelix/mealvoucher_doc/blob/master/metorpol_payment.jpg?raw=true)
+![alt text](https://github.com/aphelix/mealvoucher_doc/blob/master/metropol_payment.png?raw=true)
 
 
 SetCard:<br/>
 ![alt text](https://github.com/aphelix/mealvoucher_doc/blob/master/setcard_payment.png?raw=true)
+
+
+Edenred:<br/>
+![alt text](https://github.com/aphelix/mealvoucher_doc/blob/master/edenred_payment.png?raw=true)
+
+Sodexo:<br/>
+Sodexo transaction process is only possible by extra input via pos screen.
+
+Choose "Kartlı İslem". It means "Payment with credit card"
+![alt text](https://github.com/aphelix/mealvoucher_doc/blob/master/sodexo_flow1.jpg?raw=true) <br/>
+![alt text](https://github.com/aphelix/mealvoucher_doc/blob/master/sodexo_flow2.jpg?raw=true) <br/>
+Choose "Satıs". It means "Sales"
+![alt text](https://github.com/aphelix/mealvoucher_doc/blob/master/sodexo_flow3.jpg?raw=true) <br/>
+![alt text](https://github.com/aphelix/mealvoucher_doc/blob/master/sodexo_flow4.jpg?raw=true) <br/>
+![alt text](https://github.com/aphelix/mealvoucher_doc/blob/master/sodexo_flow5.jpg?raw=true) <br/>
+
 
 
 
