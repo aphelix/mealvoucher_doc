@@ -26,6 +26,7 @@ In this file, the configuration values of the pos devices are defined. Library c
 - Other information needed in post-call meal voucher payment or values to be needed from the user are received or displayed via the gui.
 - In Setcard contactless transactions, the card must be kept on the POS device for a long time. Otherwise, the card cannot be read.
 - CancelTrx function can be used to interrupt the process or return to the pos main screen.
+- GUI example:
 
 ![alt text](https://github.com/aphelix/mealvoucher_doc/blob/master/mv1.png?raw=true)
 
