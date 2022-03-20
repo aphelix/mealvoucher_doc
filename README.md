@@ -436,6 +436,9 @@ eftPosDevice->Free(slipStamp);
 
 
 **THE PROCESS WHERE THE TRANSACTION WAS SUCCESSFUL BUT THE SLIPS COULD NOT BE RECEIVED:**<br/>
+
+In some exceptional cases, although the payment transaction is successful, the slip list returned from the function may be empty. In this case, it is necessary to query the status of the transaction and make an additional request if it is successful. This is a process that the cashier application has to manage. <br/> 
+
 ![alt text](https://github.com/aphelix/mealvoucher_doc/blob/master/excp_flow.png?raw=true) <br/> <br/> <br/>
 
 
