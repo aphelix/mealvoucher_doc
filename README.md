@@ -291,7 +291,7 @@ Caution: SlipStamp is created by library and users have to deallocate it after u
 
 Note: This function is used through the slipstamp parameter obtained by the IsLastTransactionDone query in cases where the transaction is successful but the slips are not received. In more detail, in some exceptional cases, although the payment transaction is successful, the slip list returned from the function may be empty. In this case, it is necessary to query the status of the transaction and make an additional request if it is successful. This is a process that the cashier application has to manage, and its flow is below. <br/> <br/>
 
-THE PROCESS WHERE THE TRANSACTION WAS SUCCESSFUL BUT THE SLIPS COULD NOT BE RECEIVED:<br/>
+**THE PROCESS WHERE THE TRANSACTION WAS SUCCESSFUL BUT THE SLIPS COULD NOT BE RECEIVED:**<br/>
 ![alt text](https://github.com/aphelix/mealvoucher_doc/blob/master/excp_flow.png?raw=true) <br/> <br/> <br/>
 
 
