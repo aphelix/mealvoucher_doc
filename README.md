@@ -27,6 +27,8 @@ In this file, the configuration values of the pos devices are defined. Library c
 - In Setcard contactless transactions, the card must be kept on the POS device for a long time. Otherwise, the card cannot be read.
 - CancelTrx function can be used to interrupt the process or return to the pos main screen.
 
+![alt text](https://github.com/[username]/[reponame]/blob/[branch]/image.jpg?raw=true)
+
 
 MV_SimpleAuthorize
 ------------------
