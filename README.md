@@ -188,6 +188,8 @@ Edenred:<br/>
 You have to enter "Grup" as batchno, "Sıra" as stanno and "Sıra" as the reference number in gui. <br/>
 
 Sodexo:<br/>
+You have to enter "Grup No" as batchno, "Islem No" as stanno and "Onay Kodu" as the reference number in gui. <br/>
+![alt text](https://github.com/aphelix/mealvoucher_doc/blob/master/sodexo_void.png?raw=true) <br/>
 
 Receipts:<br/>
 
