@@ -84,8 +84,12 @@ The payment process is done through simple-payment type and using GUI. The call 
 
 - **Receipt examples**
 
-Metropol:
-![alt text](https://github.com/aphelix/mealvoucher_doc/blob/master/mv1.png?raw=true)
+Metropol:<br/>
+![alt text](https://github.com/aphelix/mealvoucher_doc/blob/master/metorpol_payment.jpg?raw=true)
+
+
+SetCard:<br/>
+![alt text](https://github.com/aphelix/mealvoucher_doc/blob/master/setcard_payment.png?raw=true)
 
 
 
