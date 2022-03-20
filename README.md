@@ -167,15 +167,15 @@ eftPosDevice->Free(slipList);
 slipList = nullptr;
 authResponse = nullptr;
 ```
+ <br/> <br/>
 
 
-
-- **Necessary Information on Payment Slips**
+**Necessary Information on Payment Slips**  <br/>
 
 ***Note: Leading zero values are ignored in GUI input for reference number***
 
 Metropol:<br/>
-You have to enter "Onay No" on the slip as the reference number in gui. <br/>
+You have to enter "Onay No" on the payment slip as the reference number in gui. <br/>
 ![alt text](https://github.com/aphelix/mealvoucher_doc/blob/master/metropol_void.png?raw=true) <br/>
 
 
@@ -190,7 +190,7 @@ You have to enter "Grup No" as batchno, "Islem No" as stanno and "Onay Kodu" as 
 ![alt text](https://github.com/aphelix/mealvoucher_doc/blob/master/sodexo_void.png?raw=true) <br/> <br/>
 
 
-- **Receipt examples**
+- **Receipt examples**  <br/>
 Metropol:<br/>
 ![alt text](https://github.com/aphelix/mealvoucher_doc/blob/master/metropol_void.png?raw=true) <br/> <br/>
 SetCard:<br/>
@@ -201,12 +201,6 @@ Sodexo:<br/>
 ![alt text](https://github.com/aphelix/mealvoucher_doc/blob/master/sodexo_void2.jpg?raw=true) <br/> <br/> <br/>
 
 
-
-
-In Multinet void transactions, the reference number is sufficient. There is no batchno and stanno information on the slip.
-- Endered iptal işleminde referans numarasına slipte bulunan sıra numarası batchNo ya slipte bulunan Grupno stanno ya slipte bulunan gene sıra numarası bilgisi girilmelidir 
-- Setcard iptal işlemlerinde slip üzerindeki  ONAY NO, BATCH NO, STAN NO: değerleri sırasıyla girilmelidir. (baştaki sıfır göz ardı edilir)
-- Metrolpol iptal işlemlerinde slip üzerindeki  ONAY NO, BATCH NO, STAN NO: değerleri sırasıyla girilmelidir.(basştaki sıfır göz ardı edilir)
 
 
 MV_BalanceInquiry
