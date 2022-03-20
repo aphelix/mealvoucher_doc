@@ -297,6 +297,34 @@ Note: This function is used through the slipstamp parameter obtained by the IsLa
 
 MV_GetAdditionalCopy
 --------------------
+It is used to get additional slip copies. 
+
+**Caution:**  <br/>
+- SlipList is created by the library and users have to deallocate it after usage. SlipType parameter is not used yet. It is available for future usage. 
+- Integration Card Reference No is required in order to be able to follow up the mv transaction over the ECR. It must be sent within the SlipStamp structure's cashRegisterRefNo field.
+
+**Important:** This function is used through the slipstamp parameter obtained by the IsLastTransactionDone query in cases where the transaction is successful but the slips are not received. Please see "THE PROCESS WHERE THE TRANSACTION WAS SUCCESSFUL BUT THE SLIPS COULD NOT BE RECEIVED"
+
+
+Return values:
+LIBRARY_CANNOT_BE_CREATED
+READ_DEVICE_CFG_ERROR
+MEALVOUCHER_GUI_ERROR 
+TRANSACTION_INTERRUPTED_BY_USER
+ACTION_HANDLER_TIMEOUT 
+ACTION_HANDLER_ERROR
+WRONG_MESSAGE
+TRANSACTION_COULD_NOT_BE_FOUND_IN_BATCH
+MESSAGE_CREATE_ERROR
+CONNECTION_FAILED
+RECV_ERROR
+TRANSACTION_INTERRUPTED_BY_POS
+MESSAGE_INTEGRITY_ERROR
+RECV_TIMEOUT
+SEND_TIMEOUT
+SEND_ERROR
+WRONG_MESSAGE
+
 
 
 
