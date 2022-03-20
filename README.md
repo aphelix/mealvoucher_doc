@@ -117,11 +117,13 @@ MV_Void
 > int32_t D10FlowController::MV_Void(VoidRequest& voidReq, AuthResponse** authResponse, SLIP_LIST** slipList)
 SUCCESS (0) is returned on success, related error code is returned on failure
 
-It is used to cancel a meal voucher payment. The relevant meal voucher card type, reference number, the batchno, the stanno  required during the void process are entered through the GUI. 
+It is used to cancel a meal voucher payment. 
 
-The reference number can vary on the slip of each meal voucher type. You can find related information below.
+- The relevant meal voucher card type, reference number, the batchno, the stanno  required during the void process are entered through the GUI. 
 
-Since the additional information will be entered with the GUI, first parameter can be used with default 0 and "" empty string values.
+- The reference number to be entered can vary on the slip of each meal voucher type. You can find related information below.
+
+- Since the additional information will be entered with the GUI, first parameter of MV_Void (VoidRequest) can be used with default 0 and "" empty string values. So it is ignored during transaction process.
 
 SUCCESS (0) is returned on success, corresponding error code is returned on failure
 
@@ -170,7 +172,7 @@ authResponse = nullptr;
  <br/> <br/>
 
 
-**Necessary Information on Payment Slips**  <br/>
+**Necessary Information found on the payment slip**  <br/>
 
 ***Note: Leading zero values are ignored in GUI input for reference number***
 
@@ -187,10 +189,10 @@ You have to enter "Grup" as batchno, "Sıra" as stanno and "Sıra" as the refere
 
 Sodexo:<br/>
 You have to enter "Grup No" as batchno, "Islem No" as stanno and "Onay Kodu" as the reference number in gui. <br/>
-![alt text](https://github.com/aphelix/mealvoucher_doc/blob/master/sodexo_void.png?raw=true) <br/> <br/>
+![alt text](https://github.com/aphelix/mealvoucher_doc/blob/master/sodexo_void.png?raw=true) <br/> <br/> <br/> <br/>
 
 
-- **Receipt examples**  <br/>
+**Void receipt examples**  <br/>
 Metropol:<br/>
 ![alt text](https://github.com/aphelix/mealvoucher_doc/blob/master/metropol_void.png?raw=true) <br/> <br/>
 SetCard:<br/>
