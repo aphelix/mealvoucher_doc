@@ -226,13 +226,39 @@ int ret = eftPosDevice->MV_BalanceInquiry();
 
 As a result of the call, the value returned by the pos is displayed on the pos device for some mv firms, for others, it will be displayed on GUI screen.
 
-Multinet -> GUI'de gözükmektedir.
-Metropol -> Pos Cihazı ekranında gözükmeketedir 
-setcard  ->  Pos Cihazı ekranında gözükmeketedir 
-edenred  ->  Pos Cihazı ekranında gözükmeketedir 
-sodexo   ->   GUI'de gözükmektedir.
+Multinet -> GUI <br/>
+Metropol -> On Pos   <br/>
+setcard  ->  On Pos  <br/>
+edenred  ->  On Pos  <br/>
+sodexo   ->   GUI <br/><br/>
 
 
+MV_IsLastTransactionDone
+--------------------
+> int MV_IsLastTransactionDone (SlipStamp**)
+
+It is the function to returns whether the last operation was successful or not. The user may query whether last transaction on the POS is saved for the end of day. Integration Card Reference No (cashRegisterRefNo) is received within the SlipStamp structure.
+
+SlipStamp contains the last slip stamp values. If the transaction is saved successfully, the function returns 0.
+
+**Return values:** <br/>
+LIBRARY_CANNOT_BE_CREATED <br/>
+READ_LAST_SLIP_STAMP_ERROR <br/>
+CANNOT_FOUND_LAST_SLIP_INFO <br/>
+MESSAGE_CREATE_ERROR <br/>
+CONNECTION_FAILED <br/>
+RECV_ERROR<br/>
+TRANSACTION_INTERRUPTED_BY_POS <br/>
+MESSAGE_INTEGRITY_ERROR <br/>
+RECV_TIMEOUT <br/>
+SEND_TIMEOUT <br/>
+SEND_ERROR <br/>
+WRONG_MESSAGE <br/>
+TRANSACTION_ERROR <br/> <br/>
+
+Caution: SlipStamp is created by library and users have to deallocate it after usage.
+
+This function is used through the slipstamp parameter obtained by the IsLastTransactionDone query in cases where the transaction is successful but the slips are not received. In more detail, in some exceptional cases, although the payment transaction is successful, the slip list returned from the function may be empty. In this case, it is necessary to query the status of the transaction and make an additional request if it is successful. This is a process that the cashier application has to manage, and its flow is below.
 
 MV_EndOfDay
 ------------
