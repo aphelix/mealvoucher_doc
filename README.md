@@ -105,6 +105,8 @@ Choose "Satıs". It means "Sales" <br/>
 ![alt text](https://github.com/aphelix/mealvoucher_doc/blob/master/sodexo_flow3.jpg?raw=true) <br/>
 ![alt text](https://github.com/aphelix/mealvoucher_doc/blob/master/sodexo_flow4.jpg?raw=true) <br/>
 ![alt text](https://github.com/aphelix/mealvoucher_doc/blob/master/sodexo_flow5.jpg?raw=true) <br/>
+Receipts:<br/>
+![alt text](https://github.com/aphelix/mealvoucher_doc/blob/master/sodexo_payment.jpg?raw=true) <br/>
 
 
 
