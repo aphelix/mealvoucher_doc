@@ -117,9 +117,11 @@ MV_Void
 > int32_t D10FlowController::MV_Void(VoidRequest& voidReq, AuthResponse** authResponse, SLIP_LIST** slipList)
 SUCCESS (0) is returned on success, related error code is returned on failure
 
-It is used to cancel a meal voucher payment. The relevant meal voucher card type, reference number, the batchno, the stanno  required during the void process are entered through the GUI. In Multinet void transactions, the reference number is sufficient. There is no batchno and stanno information on the slip.
+It is used to cancel a meal voucher payment. The relevant meal voucher card type, reference number, the batchno, the stanno  required during the void process are entered through the GUI. 
 
 The reference number can vary on the slip of each meal voucher type. You can find related information below.
+
+Since the additional information will be entered with the GUI, first parameter can be used with default 0 and "" empty string values.
 
 
 **Return values:**
@@ -172,10 +174,30 @@ SUCCESS (0) is returned on success, corresponding error code is returned on fail
 
 
 
+- **Receipt examples**
 
+Metropol:<br/>
+You have to enter "Onay No" on the slip as the reference number in gui. <br/>
+![alt text](https://github.com/aphelix/mealvoucher_doc/blob/master/metropol_void.png?raw=true) <br/>
+
+
+SetCard:<br/>
+You have to enter "Onay No" on the slip as the reference number in gui. <br/>
+
+Edenred:<br/>
+You have to enter "Grup" as batchno, "Sıra" as stanno and "Sıra" as the reference number in gui. <br/>
+
+Sodexo:<br/>
+
+Receipts:<br/>
+
+
+
+In Multinet void transactions, the reference number is sufficient. There is no batchno and stanno information on the slip.
 - Endered iptal işleminde referans numarasına slipte bulunan sıra numarası batchNo ya slipte bulunan Grupno stanno ya slipte bulunan gene sıra numarası bilgisi girilmelidir 
 - Setcard iptal işlemlerinde slip üzerindeki  ONAY NO, BATCH NO, STAN NO: değerleri sırasıyla girilmelidir. (baştaki sıfır göz ardı edilir)
 - Metrolpol iptal işlemlerinde slip üzerindeki  ONAY NO, BATCH NO, STAN NO: değerleri sırasıyla girilmelidir.(basştaki sıfır göz ardı edilir)
+
 
 MV_BalanceInquiry
 -----------------
