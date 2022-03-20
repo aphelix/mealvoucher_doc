@@ -172,9 +172,9 @@ SUCCESS (0) is returned on success, corresponding error code is returned on fail
 
 
 
+- **Necessary Information on Payment Slips**
 
-
-- **Receipt examples**
+***Note: Leading zero values are ignored in GUI input for reference number***
 
 Metropol:<br/>
 You have to enter "Onay No" on the slip as the reference number in gui. <br/>
@@ -182,16 +182,26 @@ You have to enter "Onay No" on the slip as the reference number in gui. <br/>
 
 
 SetCard:<br/>
-You have to enter "Onay No" on the slip as the reference number in gui. <br/>
+You have to enter "Onay No" on the payment slip as the reference number in gui. <br/>
 
 Edenred:<br/>
 You have to enter "Grup" as batchno, "Sıra" as stanno and "Sıra" as the reference number in gui. <br/>
 
 Sodexo:<br/>
 You have to enter "Grup No" as batchno, "Islem No" as stanno and "Onay Kodu" as the reference number in gui. <br/>
-![alt text](https://github.com/aphelix/mealvoucher_doc/blob/master/sodexo_void.png?raw=true) <br/>
+![alt text](https://github.com/aphelix/mealvoucher_doc/blob/master/sodexo_void.png?raw=true) <br/> <br/>
 
-Receipts:<br/>
+
+- **Receipt examples**
+Metropol:<br/>
+![alt text](https://github.com/aphelix/mealvoucher_doc/blob/master/metropol_void.png?raw=true) <br/> <br/>
+SetCard:<br/>
+![alt text](https://github.com/aphelix/mealvoucher_doc/blob/master/setcard_void.png?raw=true) <br/> <br/>
+Edenred:<br/>
+![alt text](https://github.com/aphelix/mealvoucher_doc/blob/master/edenred_void.jpg?raw=true) <br/> <br/>
+Sodexo:<br/>
+![alt text](https://github.com/aphelix/mealvoucher_doc/blob/master/sodexo_void2.jpg?raw=true) <br/> <br/> <br/>
+
 
 
 
