@@ -34,7 +34,7 @@ In this file, the configuration values of the pos devices are defined. Library c
 MV_SimpleAuthorize
 ------------------
 
-int32_t D10FlowController::MV_SimpleAuthorize(uint64_t amount, AuthResponse**  authResponse, SLIP_LIST** slipList)
+** int32_t D10FlowController::MV_SimpleAuthorize(uint64_t amount, AuthResponse**  authResponse, SLIP_LIST** slipList) **
 SUCCESS (0) is returned on success, related error code is returned on failure
 
 The payment process is done through simple-payment type and using gui. The call is made with amount information only. Meal card selection is done through the gui.The slip information as a result of the transaction is returned in the slipList and the transaction result information is returned in the authResponse. Slips are printed on the library side during the closing of the receipt. The memory management of the 2nd and 3rd variables is the responsibility of the caller and should be deleted after the operation.Payments can be partial. All payments (transaction) of a receipt are written to the lastreceipt file. The payment information of the last transaction is written in the lastslip file. The slip information obtained as a result of the payment is written to the slipdb folder.
