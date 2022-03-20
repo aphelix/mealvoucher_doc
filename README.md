@@ -38,25 +38,25 @@ MV_SimpleAuthorize
 
 SUCCESS (0) is returned on success, related error code is returned on failure.
 
-**Return values:**
-LIBRARY_CANNOT_BE_CREATED
-READ_DEVICE_CFG_ERROR
-AMOUNT_ERROR
-MEALVOUCHER_GUI_ERROR
-TRANSACTION_INTERRUPTED_BY_USER
-ACTION_HANDLER_TIMEOUT
-ACTION_HANDLER_ERROR
-MESSAGE_CREATE_ERROR
-CONNECTION_FAILED
-RECV_ERROR
-TRANSACTION_INTERRUPTED_BY_POS
-MESSAGE_INTEGRITY_ERROR
-RECV_TIMEOUT
-SEND_TIMEOUT
-SEND_ERROR
+**Return values:** <br/>
+LIBRARY_CANNOT_BE_CREATED <br/>
+READ_DEVICE_CFG_ERROR <br/>
+AMOUNT_ERROR <br/>
+MEALVOUCHER_GUI_ERROR <br/>
+TRANSACTION_INTERRUPTED_BY_USER <br/>
+ACTION_HANDLER_TIMEOUT <br/>
+ACTION_HANDLER_ERROR <br/>
+MESSAGE_CREATE_ERROR <br/>
+CONNECTION_FAILED <br/>
+RECV_ERROR <br/>
+TRANSACTION_INTERRUPTED_BY_POS <br/>
+MESSAGE_INTEGRITY_ERROR <br/>
+RECV_TIMEOUT <br/>
+SEND_TIMEOUT <br/>
+SEND_ERROR<br/>
 
 
-The payment process is done through simple-payment type and using gui. The call is made with amount information only. Meal card selection is done through the gui.The slip information as a result of the transaction is returned in the slipList and the transaction result information is returned in the authResponse. Slips are printed on the library side during the closing of the receipt. The memory management of the 2nd and 3rd variables is the responsibility of the caller and should be deleted after the operation.Payments can be partial. All payments (transaction) of a receipt are written to the lastreceipt file. The payment information of the last transaction is written in the lastslip file. The slip information obtained as a result of the payment is written to the slipdb folder.
+The payment process is done through simple-payment type and using GUI. The call is made with amount information only. Meal card selection is done through the GUI. The slip information as a result of the transaction is returned in the slipList and the transaction result information is returned in the authResponse. Slips are printed on the library side during the closing of the receipt. The memory management of the 2nd and 3rd variables is the responsibility of the caller and should be deleted after the operation. Payment can be partial. All payments (transaction) of a receipt are written to the lastreceipt file. The payment information of the last transaction is written in the lastslip file. The slip information obtained as a result of the payment is written to the slipdb folder. They can be controlled.
 
 **Usage example:**
 
