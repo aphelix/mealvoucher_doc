@@ -241,6 +241,8 @@ It is the function to returns whether the last operation was successful or not. 
 
 SlipStamp contains the last slip stamp values. If the transaction is saved successfully, the function returns 0.
 
+**Caution:** SlipStamp is created by library and users have to deallocate it after usage.
+
 **Return values:** <br/>
 LIBRARY_CANNOT_BE_CREATED <br/>
 READ_LAST_SLIP_STAMP_ERROR <br/>
@@ -287,12 +289,7 @@ Show(str);
 eftPosDevice->Free(slipStamp);
 ```
 
-Caution: SlipStamp is created by library and users have to deallocate it after usage.
-
-Note: This function is used through the slipstamp parameter obtained by the IsLastTransactionDone query in cases where the transaction is successful but the slips are not received. In more detail, in some exceptional cases, although the payment transaction is successful, the slip list returned from the function may be empty. In this case, it is necessary to query the status of the transaction and make an additional request if it is successful. This is a process that the cashier application has to manage, and its flow is below. <br/> <br/>
-
-**THE PROCESS WHERE THE TRANSACTION WAS SUCCESSFUL BUT THE SLIPS COULD NOT BE RECEIVED:**<br/>
-![alt text](https://github.com/aphelix/mealvoucher_doc/blob/master/excp_flow.png?raw=true) <br/> <br/> <br/>
+**Note:** In some exceptional cases, although the payment transaction is successful, the slip list returned from the function may be empty. In this case, it is necessary to query the status of the transaction and make an additional request if it is successful. This is a process that the cashier application has to manage. Please see "THE PROCESS WHERE THE TRANSACTION WAS SUCCESSFUL BUT THE SLIPS COULD NOT BE RECEIVED" <br/> <br/>
 
 
 MV_GetAdditionalCopy
@@ -303,10 +300,10 @@ It is used to get additional slip copies.
 - SlipList is created by the library and users have to deallocate it after usage. SlipType parameter is not used yet. It is available for future usage. 
 - Integration Card Reference No is required in order to be able to follow up the mv transaction over the ECR. It must be sent within the SlipStamp structure's cashRegisterRefNo field.
 
-**Important:** This function is used through the slipstamp parameter obtained by the IsLastTransactionDone query in cases where the transaction is successful but the slips are not received. Please see "THE PROCESS WHERE THE TRANSACTION WAS SUCCESSFUL BUT THE SLIPS COULD NOT BE RECEIVED"
+**Note:** This function is used through the slipstamp parameter obtained by the IsLastTransactionDone query in cases where the transaction is successful but the slips are not received. In more detail, in some exceptional cases, although the payment transaction is successful, the slip list returned from the function may be empty. In this case, it is necessary to query the status of the transaction and make an additional request if it is successful. This is a process that the cashier application has to manage. Please see "THE PROCESS WHERE THE TRANSACTION WAS SUCCESSFUL BUT THE SLIPS COULD NOT BE RECEIVED" <br/> <br/>
 
 
-Return values:
+**Return values:**
 LIBRARY_CANNOT_BE_CREATED
 READ_DEVICE_CFG_ERROR
 MEALVOUCHER_GUI_ERROR 
@@ -326,10 +323,54 @@ SEND_ERROR
 WRONG_MESSAGE
 
 
+**Usage example:**
+
+```
+SlipStamp* slipStamp = nullptr;
+
+// Getting device.
+UnmanagedEftLib::EftPosDevice* eftPosDevice = eftpos.CreatePosDevice(gPosId);
+if (!eftPosDevice)
+{
+  // error...
+}
+
+ret = eftPosDevice->MV_IsLastTransactionDone(&slipStamp);
+if (ret)
+{
+	STRING text = "Last Transaction is not successfully DONE. Status is " + I2S(ret);
+	//error...
+	return;
+}
+
+SLIP_LIST* slipList = 0;
+slipType_ = MERCHANT_CUSTOMER_COPY;
+ret = eftPosDevice->MV_GetAdditionalCopy(slipType_, slipStamp, &slipList);
+
+if(ret == SUCCESS)
+{
+	// Slips had been received and they can be printed when fcuCloseDoc called.
+	fcuCloseDoc();
+}
+
+eftPosDevice->Free(slipList);
+eftPosDevice->Free(slipStamp);
+```
+
+
 
 
 MV_EndOfDay
 ------------
+
+It is used to initiate the end of day of all meal voucher payments.
+
+
+
+
+
+**THE PROCESS WHERE THE TRANSACTION WAS SUCCESSFUL BUT THE SLIPS COULD NOT BE RECEIVED:**<br/>
+![alt text](https://github.com/aphelix/mealvoucher_doc/blob/master/excp_flow.png?raw=true) <br/> <br/> <br/>
 
 
 
