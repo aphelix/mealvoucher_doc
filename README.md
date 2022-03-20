@@ -294,6 +294,8 @@ eftPosDevice->Free(slipStamp);
 
 MV_GetAdditionalCopy
 --------------------
+> int32_t D10FlowController::MV_GetAdditionalCopy(SLIP_TYPE slipType, SlipStamp& slipStamp, SLIP_LIST** slips)
+
 It is used to get additional slip copies. 
 
 **Caution:**  <br/>
@@ -304,23 +306,23 @@ It is used to get additional slip copies.
 
 
 **Return values:**
-LIBRARY_CANNOT_BE_CREATED
-READ_DEVICE_CFG_ERROR
-MEALVOUCHER_GUI_ERROR 
-TRANSACTION_INTERRUPTED_BY_USER
-ACTION_HANDLER_TIMEOUT 
-ACTION_HANDLER_ERROR
-WRONG_MESSAGE
-TRANSACTION_COULD_NOT_BE_FOUND_IN_BATCH
-MESSAGE_CREATE_ERROR
-CONNECTION_FAILED
-RECV_ERROR
-TRANSACTION_INTERRUPTED_BY_POS
-MESSAGE_INTEGRITY_ERROR
-RECV_TIMEOUT
-SEND_TIMEOUT
-SEND_ERROR
-WRONG_MESSAGE
+LIBRARY_CANNOT_BE_CREATED    <br/>
+READ_DEVICE_CFG_ERROR    <br/>
+MEALVOUCHER_GUI_ERROR     <br/>
+TRANSACTION_INTERRUPTED_BY_USER    <br/>
+ACTION_HANDLER_TIMEOUT     <br/>
+ACTION_HANDLER_ERROR    <br/>
+WRONG_MESSAGE    <br/>
+TRANSACTION_COULD_NOT_BE_FOUND_IN_BATCH    <br/>
+MESSAGE_CREATE_ERROR    <br/>
+CONNECTION_FAILED    <br/>
+RECV_ERROR   <br/>
+TRANSACTION_INTERRUPTED_BY_POS    <br/>
+MESSAGE_INTEGRITY_ERROR    <br/>
+RECV_TIMEOUT     <br/>
+SEND_TIMEOUT    <br/>
+SEND_ERROR    <br/>
+WRONG_MESSAGE    <br/>
 
 
 **Usage example:**
@@ -358,12 +360,61 @@ eftPosDevice->Free(slipStamp);
 ```
 
 
-
-
 MV_EndOfDay
 ------------
+> int MV_EndOfDay (EOD_INFO_LIST**, SLIP_LIST**)
 
 It is used to initiate the end of day of all meal voucher payments.
+
+If the function call is success, it returns 0.
+
+Caution EOD_INFO_LIST and SlipList are created by library and users have to deallocate them after usage.
+
+SLIP_LIST output parameter contains only acqId (mealvoucher id) and result value for each eod transaction.
+
+**mealvoucher id**    <br/>
+0xA1:  Multinet  161    <br/>
+0xA2:  Metropol  162    <br/>
+0xA3:  Edenred  163    <br/>
+0xA4:  Sodexho  164    <br/>
+0xA5:  SetCard  165    <br/>
+
+
+**Usage example:**
+
+```
+SlipStamp* slipStamp = nullptr;
+
+// Getting device.
+UnmanagedEftLib::EftPosDevice* eftPosDevice = eftpos.CreatePosDevice(gPosId);
+if (!eftPosDevice)
+{
+  // error...
+}
+
+ret = eftPosDevice->MV_IsLastTransactionDone(&slipStamp);
+if (ret)
+{
+	STRING text = "Last Transaction is not successfully DONE. Status is " + I2S(ret);
+	//error...
+	return;
+}
+
+SLIP_LIST* slipList = 0;
+slipType_ = MERCHANT_CUSTOMER_COPY;
+ret = eftPosDevice->MV_GetAdditionalCopy(slipType_, slipStamp, &slipList);
+
+if(ret == SUCCESS)
+{
+	// Slips had been received and they can be printed when fcuCloseDoc called.
+	fcuCloseDoc();
+}
+
+eftPosDevice->Free(slipList);
+eftPosDevice->Free(slipStamp);
+```
+
+<br/> <br/> <br/> <br/>
 
 
 
