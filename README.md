@@ -114,14 +114,30 @@ Receipts:<br/>
 MV_Void
 -------
 
-int32_t D10FlowController::MV_Void(VoidRequest& voidReq, AuthResponse** authResponse, SLIP_LIST** slipList)
+> int32_t D10FlowController::MV_Void(VoidRequest& voidReq, AuthResponse** authResponse, SLIP_LIST** slipList)
 SUCCESS (0) is returned on success, related error code is returned on failure
 
 It is used to cancel a meal voucher payment. The relevant meal voucher card type, reference number, the batchno, the stanno  required during the void process are entered through the GUI. In Multinet void transactions, the reference number is sufficient. There is no batchno and stanno information on the slip.
 
-- Endered iptal işleminde referans numarasına slipte bulunan sıra numarası batchNo ya slipte bulunan Grupno stanno ya slipte bulunan gene sıra numarası bilgisi girilmelidir 
-- Setcard iptal işlemlerinde slip üzerindeki  ONAY NO, BATCH NO, STAN NO: değerleri sırasıyla girilmelidir. (baştaki sıfır göz ardı edilir)
-- Metrolpol iptal işlemlerinde slip üzerindeki  ONAY NO, BATCH NO, STAN NO: değerleri sırasıyla girilmelidir.(basştaki sıfır göz ardı edilir)
+The reference number can vary on the slip of each meal voucher type. You can find related information below.
+
+
+**Return values:**
+LIBRARY_CANNOT_BE_CREATED 
+READ_DEVICE_CFG_ERROR 
+MEALVOUCHER_GUI_ERROR 
+TRANSACTION_INTERRUPTED_BY_USER
+ACTION_HANDLER_TIMEOUT 
+ACTION_HANDLER_ERROR
+MESSAGE_CREATE_ERROR 
+CONNECTION_FAILED 
+RECV_ERROR
+TRANSACTION_INTERRUPTED_BY_POS
+MESSAGE_INTEGRITY_ERROR
+RECV_TIMEOUT
+SEND_TIMEOUT
+SEND_ERROR
+
 
 **Usage example:**
 
@@ -151,6 +167,15 @@ authResponse = nullptr;
 ```
 
 SUCCESS (0) is returned on success, corresponding error code is returned on failure
+
+
+
+
+
+
+- Endered iptal işleminde referans numarasına slipte bulunan sıra numarası batchNo ya slipte bulunan Grupno stanno ya slipte bulunan gene sıra numarası bilgisi girilmelidir 
+- Setcard iptal işlemlerinde slip üzerindeki  ONAY NO, BATCH NO, STAN NO: değerleri sırasıyla girilmelidir. (baştaki sıfır göz ardı edilir)
+- Metrolpol iptal işlemlerinde slip üzerindeki  ONAY NO, BATCH NO, STAN NO: değerleri sırasıyla girilmelidir.(basştaki sıfır göz ardı edilir)
 
 MV_BalanceInquiry
 -----------------
