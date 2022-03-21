@@ -167,9 +167,6 @@ if(ret)
 
 eftPosDevice->Free(authResponse);
 eftPosDevice->Free(slipList);
-
-slipList = nullptr;
-authResponse = nullptr;
 ```
  <br/> <br/>
 
