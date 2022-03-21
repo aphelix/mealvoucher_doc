@@ -369,7 +369,7 @@ If the function call is success, it returns 0.
 
 Caution EOD_INFO_LIST and SlipList are created by library and users have to deallocate them after usage.
 
-SLIP_LIST output parameter contains only **acqId (mealvoucher id)** and **result** value for each eod transaction.
+EOD_INFO_LIST output parameter contains only **acqId (mealvoucher id)** and **result** value for each eod transaction.
 
 All banks end of day transactions are accomplished in a single MV_EndOfDay call.
 
