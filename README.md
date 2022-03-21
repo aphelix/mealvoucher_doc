@@ -125,6 +125,8 @@ It is used to cancel a meal voucher payment.
 
 - Since the additional information will be entered with the GUI, first parameter of MV_Void (VoidRequest) can be used with default 0 and "" empty string values. So it is ignored during transaction process.
 
+- If there is no batchno or stanno on the slip. You can leave them 0 when you input on the GUI.
+
 SUCCESS (0) is returned on success, corresponding error code is returned on failure
 
 **Return values:** <br/>
